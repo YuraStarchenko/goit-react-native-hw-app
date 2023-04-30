@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on</Text>
+      <Text style={styles.text}>Hurd Work 🖥</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    fontSize: 30,
+		fontSize: 30,
+		color: 'green',
   },
 });
