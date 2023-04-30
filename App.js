@@ -1,46 +1,59 @@
 import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
   TextInput,
   View,
   ImageBackground,
-  Button,
   TouchableOpacity,
+  KeyboardAvoidingView,
 } from "react-native";
 
 export default function App() {
+  const [isShowKeyboard, setIsShowKeyboard] = useState(false);
+
   return (
     <View style={styles.container}>
       <ImageBackground
         source={require("./assets/PhotoBG.png")}
         style={styles.image}
       >
-        <View style={styles.form}>
-          <View>
-            <Text style={styles.inputTitle}>Регистрация</Text>
-            <TextInput
-              style={styles.login}
-              textAlign={"center"}
-              placeholder="Логин"
-            ></TextInput>
-            <TextInput
-              style={styles.mail}
-              textAlign={"center"}
-              placeholder="Адрес электронной почты"
-            ></TextInput>
-            <TextInput
-              style={styles.password}
-              textAlign={"center"}
-              placeholder="Пароль"
-              secureTextEntry={true}
-            ></TextInput>
-          </View>
+        <KeyboardAvoidingView>
+          <View
+            style={{
+              ...styles.form,
+              marginBottom: isShowKeyboard ? -368 : 32,
+            }}
+          >
+            <View>
+              <Text style={styles.inputTitle}>Регистрация</Text>
+              <TextInput
+                style={styles.login}
+                textAlign={"center"}
+                placeholder="Логин"
+                onFocus={() => setIsShowKeyboard(true)}
+              ></TextInput>
+              <TextInput
+                style={styles.mail}
+                textAlign={"center"}
+                placeholder="Адрес электронной почты"
+                onFocus={() => setIsShowKeyboard(true)}
+              ></TextInput>
+              <TextInput
+                style={styles.password}
+                textAlign={"center"}
+                placeholder="Пароль"
+                onFocus={() => setIsShowKeyboard(true)}
+                secureTextEntry={true}
+              ></TextInput>
+            </View>
 
-          <TouchableOpacity activeOpacity={0.8} style={styles.btn}>
-            <Text style={styles.btnTitle}>Зарегистрироваться</Text>
-          </TouchableOpacity>
-        </View>
+            <TouchableOpacity activeOpacity={0.8} style={styles.btn}>
+              <Text style={styles.btnTitle}>Зарегистрироваться</Text>
+            </TouchableOpacity>
+          </View>
+        </KeyboardAvoidingView>
       </ImageBackground>
       <StatusBar style="auto" />
     </View>
@@ -60,22 +73,28 @@ const styles = StyleSheet.create({
   },
 
   form: {
-    marginHorizontal: 16,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    backgroundColor: "#fff",
   },
 
   inputTitle: {
     fontSize: 30,
     fontWeight: 500,
+    marginTop: 92,
+    marginBottom: 33,
+    textAlign: "center",
   },
 
   login: {
     borderWidth: 1,
     height: 50,
     borderRadius: 8,
-    borderColor: "#F6F6F6",
-
+    borderColor: "#E8E8E8",
+    backgroundColor: "#F6F6F6",
+    marginHorizontal: 16,
     fontSize: 20,
-    color: "#F6F6F6",
+    color: "#BDBDBD",
   },
 
   mail: {
@@ -84,20 +103,22 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     marginTop: 16,
     borderRadius: 8,
-    borderColor: "#F6F6F6",
-
+    marginHorizontal: 16,
+    borderColor: "#E8E8E8",
+    backgroundColor: "#F6F6F6",
     fontSize: 20,
-    color: "#F6F6F6",
+    color: "#BDBDBD",
   },
 
   password: {
     borderWidth: 1,
     height: 50,
     borderRadius: 8,
-    borderColor: "#F6F6F6",
-
+    borderColor: "#E8E8E8",
+    backgroundColor: "#F6F6F6",
+    marginHorizontal: 16,
     fontSize: 20,
-    color: "#F6F6F6",
+    color: "#BDBDBD",
   },
 
   btn: {
@@ -105,10 +126,12 @@ const styles = StyleSheet.create({
     height: 51,
     borderRadius: 100,
     marginTop: 43,
+    marginBottom: 113,
+    marginHorizontal: 16,
     justifyContent: "center",
-		alignItems: "center",
-	},
-	
+    alignItems: "center",
+  },
+
   btnTitle: {
     color: "#ffffff",
     fontSize: 16,
