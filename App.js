@@ -8,7 +8,21 @@ export default function App() {
         source={require("./assets/PhotoBG.png")}
         style={styles.image}
       >
-        <TextInput style={styles.input}></TextInput>
+        <TextInput
+          style={styles.login}
+          textAlign={"left"}
+          placeholder="Логин"
+        ></TextInput>
+        <TextInput
+          style={styles.mail}
+          textAlign={"left"}
+          placeholder="Адрес электронной почты"
+        ></TextInput>
+        <TextInput
+          style={styles.password}
+          textAlign={"left"}
+          placeholder="Пароль"
+        ></TextInput>
       </ImageBackground>
       <StatusBar style="auto" />
     </View>
@@ -20,19 +34,50 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
+
   image: {
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
     alignItems: "center",
   },
-  input: {
-		borderWidth: 2,
-		height: 50,
-		borderRadius: 8,
+
+  login: {
+    borderWidth: 1,
+    height: 50,
+		width: 343,
+		marginLeft: 20,
+    marginHorizontal: 20,
+    borderRadius: 8,
     borderColor: "#F6F6F6",
 
-    fontSize: 30,
-    color: "green",
+    fontSize: 20,
+    color: "#F6F6F6",
+  },
+
+  mail: {
+    borderWidth: 1,
+    height: 50,
+    width: 343,
+    marginBottom: 16,
+    marginTop: 16,
+    marginHorizontal: 20,
+    borderRadius: 8,
+    borderColor: "#F6F6F6",
+
+    fontSize: 20,
+    color: "#F6F6F6",
+  },
+
+  password: {
+    borderWidth: 1,
+    height: 50,
+    width: 343,
+    marginHorizontal: 20,
+    borderRadius: 8,
+    borderColor: "#F6F6F6",
+
+    fontSize: 20,
+    color: "#F6F6F6",
   },
 });
