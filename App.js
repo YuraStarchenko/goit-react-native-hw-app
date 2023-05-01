@@ -30,20 +30,17 @@ export default function App() {
               <Text style={styles.inputTitle}>Регистрация</Text>
               <TextInput
                 style={styles.login}
-                textAlign={"center"}
                 placeholder="Логин"
                 onFocus={() => setIsShowKeyboard(true)}
               ></TextInput>
               <TextInput
                 style={styles.mail}
-                textAlign={"center"}
                 placeholder="Адрес электронной почты"
                 onFocus={() => setIsShowKeyboard(true)}
               ></TextInput>
               <TextInput
                 style={styles.password}
-                textAlign={"center"}
-                placeholder="Пароль"
+                placeholder={"Пароль"}
                 onFocus={() => setIsShowKeyboard(true)}
                 secureTextEntry={true}
               ></TextInput>
@@ -69,7 +66,6 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
-    // alignItems: "center",
   },
 
   form: {
@@ -89,36 +85,39 @@ const styles = StyleSheet.create({
   login: {
     borderWidth: 1,
     height: 50,
+    paddingLeft: 20,
     borderRadius: 8,
     borderColor: "#E8E8E8",
     backgroundColor: "#F6F6F6",
     marginHorizontal: 16,
     fontSize: 20,
-    color: "#BDBDBD",
+    color: "#000",
   },
 
   mail: {
     borderWidth: 1,
     height: 50,
     marginBottom: 16,
+    paddingLeft: 20,
     marginTop: 16,
     borderRadius: 8,
     marginHorizontal: 16,
     borderColor: "#E8E8E8",
     backgroundColor: "#F6F6F6",
     fontSize: 20,
-    color: "#BDBDBD",
+    color: "#000",
   },
 
   password: {
     borderWidth: 1,
     height: 50,
     borderRadius: 8,
+    paddingLeft: 20,
     borderColor: "#E8E8E8",
     backgroundColor: "#F6F6F6",
     marginHorizontal: 16,
     fontSize: 20,
-    color: "#BDBDBD",
+    color: "#000",
   },
 
   btn: {
